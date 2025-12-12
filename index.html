@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,7 @@
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
-            overflow: hidden; 
+            overflow: hidden;
         }
 
         /* 메인 컨테이너 */
@@ -31,7 +32,7 @@
             max-width: 500px;
             padding: 3rem 2rem;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             text-align: center;
             position: relative;
             transition: all 0.3s ease;
@@ -50,14 +51,18 @@
             transition: opacity 0.3s;
             z-index: 10;
         }
-        .btn-settings:hover { opacity: 1; }
+
+        .btn-settings:hover {
+            opacity: 1;
+        }
 
         /* 제목 (커스텀 가능) */
-        h1 { 
-            margin-bottom: 2rem; 
-            color: #333; 
+        h1 {
+            margin-bottom: 2rem;
+            color: #333;
             font-size: 1.8rem;
-            word-break: keep-all; /* 단어 단위 줄바꿈 */
+            word-break: keep-all;
+            /* 단어 단위 줄바꿈 */
         }
 
         /* 질문 박스 */
@@ -91,21 +96,28 @@
             box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
             font-weight: bold;
         }
-        .btn-draw:active { transform: scale(0.98); }
+
+        .btn-draw:active {
+            transform: scale(0.98);
+        }
 
         /* --- 관리자 모달 (팝업) --- */
         .modal-overlay {
             display: none;
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.6);
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
-        
-        .modal-overlay.open { display: flex; }
+
+        .modal-overlay.open {
+            display: flex;
+        }
 
         .modal-content {
             background: white;
@@ -127,14 +139,25 @@
             border-bottom: 1px solid #eee;
             padding-bottom: 10px;
         }
-        .modal-header h2 { margin: 0; font-size: 1.2rem; }
-        .btn-close { font-size: 1.5rem; background:none; border:none; cursor:pointer;}
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .btn-close {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
 
         /* 제목 설정 인풋 */
         .setting-group {
             margin-bottom: 15px;
             text-align: left;
         }
+
         .setting-label {
             font-size: 0.85rem;
             color: #666;
@@ -142,6 +165,7 @@
             display: block;
             font-weight: bold;
         }
+
         .input-title {
             width: 100%;
             padding: 10px;
@@ -160,6 +184,7 @@
             border-radius: 8px;
             min-height: 120px;
         }
+
         .question-item {
             display: flex;
             justify-content: space-between;
@@ -169,25 +194,92 @@
             font-size: 0.9rem;
             text-align: left;
         }
-        .btn-delete { color: #ccc; background:none; border:none; font-size:1.2rem; cursor:pointer; padding:0 0 0 10px;}
-        .btn-delete:hover { color: var(--danger-color); }
+
+        .btn-delete {
+            color: #ccc;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0 0 0 10px;
+        }
+
+        .btn-delete:hover {
+            color: var(--danger-color);
+        }
 
         /* 탭 및 입력 */
-        .input-section { border-top: 1px solid #eee; padding-top: 15px; }
-        .tab-buttons { display: flex; gap: 10px; margin-bottom: 10px; }
-        .tab-btn { background: #f1f1f1; border: none; padding: 8px 12px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; color: #666; }
-        .tab-btn.active { background: #333; color: white; font-weight: bold; }
-        
-        .form-group { display: none; }
-        .form-group.active { display: block; }
-        
-        .single-input-group { display: flex; gap: 8px; }
-        input[type="text"] { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
-        
-        textarea { width: 100%; height: 70px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; resize: vertical; box-sizing: border-box;}
-        
-        .btn-add { background-color: #333; color: white; border: none; padding: 0 15px; border-radius: 6px; cursor: pointer; height: 40px; }
-        .btn-add.full-width { width: 100%; margin-top: 5px; }
+        .input-section {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tab-btn {
+            background: #f1f1f1;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .tab-btn.active {
+            background: #333;
+            color: white;
+            font-weight: bold;
+        }
+
+        .form-group {
+            display: none;
+        }
+
+        .form-group.active {
+            display: block;
+        }
+
+        .single-input-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        .btn-add {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            height: 40px;
+        }
+
+        .btn-add.full-width {
+            width: 100%;
+            margin-top: 5px;
+        }
 
         /* 리셋 버튼 영역 */
         .reset-section {
@@ -196,6 +288,7 @@
             padding-top: 15px;
             text-align: right;
         }
+
         .btn-reset {
             background-color: white;
             border: 1px solid var(--danger-color);
@@ -206,26 +299,64 @@
             font-size: 0.8rem;
             transition: all 0.2s;
         }
+
         .btn-reset:hover {
             background-color: var(--danger-color);
             color: white;
         }
 
-        .shake { animation: shake 0.5s; }
+        .slide-up {
+            animation: slideUp 2.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-            20%, 40%, 60%, 80% { transform: translateX(5px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-5px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(5px);
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <button class="btn-settings" onclick="openAdmin()" title="설정 및 관리">⚙️</button>
-        
+
         <h1 id="main-title">랜덤 질문 게임</h1>
-        
+
         <div class="question-box" id="display-area">준비되셨나요?</div>
         <button class="btn-draw" onclick="pickQuestion()">질문 뽑기!</button>
     </div>
@@ -239,7 +370,8 @@
 
             <div class="setting-group">
                 <span class="setting-label">페이지 제목 변경</span>
-                <input type="text" id="input-page-title" class="input-title" placeholder="예: 2024 송년회 질문들" oninput="updateTitleRealtime()">
+                <input type="text" id="input-page-title" class="input-title" placeholder="예: 2024 송년회 질문들"
+                    oninput="updateTitleRealtime()">
             </div>
 
             <div class="modal-header" style="border-bottom: none; margin-bottom: 5px; padding-bottom: 0;">
@@ -288,6 +420,8 @@
         // 상태 변수
         let questions = [];
         let pageTitle = DEFAULT_TITLE;
+        let remainingIndices = []; // 아직 뽑지 않은 질문의 인덱스들
+        let isFinished = false;    // 게임 종료 여부
 
         // DOM 요소
         const displayArea = document.getElementById('display-area');
@@ -296,6 +430,7 @@
         const badgeEl = document.getElementById('count-badge');
         const mainTitleEl = document.getElementById('main-title');
         const titleInputEl = document.getElementById('input-page-title');
+        const btnDraw = document.querySelector('.btn-draw');
 
         // 시작 시 데이터 불러오기
         loadData();
@@ -305,19 +440,29 @@
             // 질문 로드
             const savedQ = localStorage.getItem('myQuestions');
             questions = savedQ ? JSON.parse(savedQ) : [...DEFAULT_QUESTIONS];
-            
+
             // 제목 로드
             const savedT = localStorage.getItem('myPageTitle');
             pageTitle = savedT ? savedT : DEFAULT_TITLE;
 
             // 화면 적용
             applyTitle();
-            renderList();
+            renderList(); // 리스트 렌더링
+            initGame();   // 게임 상태 초기화
         }
 
         function saveData() {
             localStorage.setItem('myQuestions', JSON.stringify(questions));
             localStorage.setItem('myPageTitle', pageTitle);
+        }
+
+        // --- [기능 0] 게임 상태 관리 ---
+        function initGame() {
+            // 인덱스 배열 초기화 (0부터 N-1까지)
+            remainingIndices = questions.map((_, i) => i);
+            displayArea.innerText = "준비되셨나요?";
+            isFinished = false;
+            if (btnDraw) btnDraw.innerText = "질문 뽑기!";
         }
 
         // --- [기능 1] 제목 관련 ---
@@ -337,15 +482,29 @@
             if (confirm("정말로 초기화하시겠습니까?\n모든 추가된 질문과 제목 설정이 사라집니다.")) {
                 questions = [...DEFAULT_QUESTIONS]; // 기본 질문으로 복구
                 pageTitle = DEFAULT_TITLE;          // 기본 제목으로 복구
-                
+
                 saveData();     // 저장소 덮어쓰기
                 applyTitle();   // 제목 화면 갱신
                 renderList();   // 리스트 화면 갱신
-                
-                // 안내
-                displayArea.innerText = "초기화되었습니다!";
+                initGame();     // 게임 상태 초기화
+
                 alert("초기화되었습니다.");
             }
+        }
+
+        // --- 사운드 효과 (MP3 파일 사용) ---
+        const popAudio = new Audio('pop.mp3');
+        const completeAudio = new Audio('complete.mp3');
+
+        function playPopSound() {
+            // 재생 중이라면 처음으로 되감기 (연속 클릭 대응)
+            popAudio.currentTime = 0;
+            popAudio.play().catch(e => console.log("Audio play failed:", e));
+        }
+
+        function playCompleteSound() {
+            completeAudio.currentTime = 0;
+            completeAudio.play().catch(e => console.log("Audio play failed:", e));
         }
 
         // --- 메인 게임 로직 ---
@@ -354,10 +513,38 @@
                 displayArea.innerText = "질문이 없습니다. ⚙️ 설정에서 추가해주세요!";
                 return;
             }
-            displayArea.classList.add('shake');
-            setTimeout(() => displayArea.classList.remove('shake'), 500);
-            const r = Math.floor(Math.random() * questions.length);
-            displayArea.innerText = questions[r];
+
+            // [상태 1] 이미 종료된 상태에서 클릭 -> 초기화
+            if (isFinished) {
+                initGame();
+                return;
+            }
+
+            // [상태 2] 남은 질문이 없을 때 -> 종료 화면 표시
+            if (remainingIndices.length === 0) {
+                displayArea.innerHTML = '<div style="text-align:center">🎉 모든 질문 완료! 🎉<br><br><b>다시 하시겠습니까?</b></div>';
+                btnDraw.innerText = "처음으로 돌아가기";
+                isFinished = true;
+                playCompleteSound(); // 완료 효과음 재생
+                return;
+            }
+
+            // 소리 재생
+            playPopSound();
+
+            displayArea.classList.remove('slide-up');
+            void displayArea.offsetWidth; // Trigger reflow
+            displayArea.classList.add('slide-up');
+
+            // 남은 인덱스 중에서 랜덤 선택
+            const randomIndex = Math.floor(Math.random() * remainingIndices.length);
+            const questionIndex = remainingIndices[randomIndex];
+
+            // 질문 표시
+            displayArea.innerText = questions[questionIndex];
+
+            // 뽑은 인덱스 제거
+            remainingIndices.splice(randomIndex, 1);
         }
 
         // --- 관리자/리스트 로직 ---
@@ -383,6 +570,7 @@
             if (val) {
                 questions.push(val);
                 renderList();
+                initGame(); // 질문 추가 시 게임 리셋 (인덱스 꼬임 방지)
                 input.value = "";
                 scrollToBottom();
             }
@@ -394,6 +582,7 @@
             if (lines.length > 0) {
                 questions = questions.concat(lines);
                 renderList();
+                initGame(); // 질문 추가 시 게임 리셋
                 alert(`${lines.length}개 추가 완료!`);
                 textarea.value = "";
                 scrollToBottom();
@@ -401,9 +590,10 @@
         }
 
         function deleteQuestion(idx) {
-            if(confirm('이 질문을 삭제할까요?')) {
+            if (confirm('이 질문을 삭제할까요?')) {
                 questions.splice(idx, 1);
                 renderList();
+                initGame(); // 질문 삭제 시 게임 리셋
             }
         }
 
@@ -420,9 +610,10 @@
         }
 
         document.getElementById('new-question').addEventListener('keypress', (e) => {
-            if(e.key === 'Enter') addQuestion();
+            if (e.key === 'Enter') addQuestion();
         });
     </script>
 
 </body>
+
 </html>
