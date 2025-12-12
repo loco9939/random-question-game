@@ -80,7 +80,34 @@
             margin-bottom: 2rem;
             border: 2px solid #dae1ff;
             word-break: keep-all;
-            transition: transform 0.1s;
+            /* transition: transform 0.1s; removed to prevent bubble movement */
+            position: relative;
+            margin-bottom: 2.5rem;
+            /* 꼬리 공간 확보 */
+        }
+
+        /* 말풍선 꼬리 (테두리) */
+        .question-box::before {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-style: solid;
+            border-width: 22px 20px 0;
+            border-color: #dae1ff transparent transparent transparent;
+        }
+
+        /* 말풍선 꼬리 (배경색 위) */
+        .question-box::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-style: solid;
+            border-width: 19px 17px 0;
+            border-color: #eef2ff transparent transparent transparent;
         }
 
         /* 뽑기 버튼 */
@@ -357,7 +384,9 @@
 
         <h1 id="main-title">랜덤 질문 게임</h1>
 
-        <div class="question-box" id="display-area">준비되셨나요?</div>
+        <div class="question-box">
+            <div id="display-area" style="width:100%; text-align:center;">준비되셨나요?</div>
+        </div>
         <button class="btn-draw" onclick="pickQuestion()">질문 뽑기!</button>
     </div>
 
